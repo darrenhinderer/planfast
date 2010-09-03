@@ -1,0 +1,18 @@
+h1. Planfast
+
+Most people doing the planning game use fingers or playing cards to represent their task estimates. But it's easy for people to get distracted, and often results come out biased, even without trying. Planfast doesn't show any estimates until all votes are in. It uses juggernaut for real time results.
+
+h2. Setup
+
+<pre>
+  rake gems:install
+  rake db:setup
+</pre>
+
+The server is started and configured separately.
+Look at both config/juggernaut_hosts.yml and juggernaut.yml.
+
+<pre>
+  juggernaut -c juggernaut.yml
+</pre>
+
