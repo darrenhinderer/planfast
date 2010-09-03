@@ -1,0 +1,13 @@
+
+<% for player in @players %>
+  <%= player.name %>: <%= vote_text(player.vote, hide_votes(@players))%>, 
+  <%= link_to_remote('Kick',
+             :url => "players/#{player.id}",
+             :method => :delete) %>
+  <br/>
+<% end %>
+<br/>
+
+<% unless hide_votes(@players) %>
+Average: <%= average_vote(@players) %>
+<% end %>

@@ -1,0 +1,30 @@
+<style>
+body { font-size:20px;}
+</style>
+
+<%= juggernaut %>
+
+<% remote_form_for(Player.new) do |f| %>
+ <%= f.text_field :name %>
+ <%= submit_tag 'Join the planning game' %>
+<% end %>
+<br/>
+
+Vote:<br/>
+<%= link_to_remote 'Clear', :url => "votes/update?value=0" %>
+<%= link_to_remote '1', :url => "votes/update?value=1" %>
+<%= link_to_remote '2', :url => "votes/update?value=2" %>
+<%= link_to_remote '3', :url => "votes/update?value=3" %>
+<%= link_to_remote '4', :url => "votes/update?value=4" %>
+<%= link_to_remote '5', :url => "votes/update?value=5" %>
+<%= link_to_remote '6', :url => "votes/update?value=6" %>
+<br/>
+<hr style="width:350px;" align="left"/>
+
+<div id="player_list">
+  <%= render :partial => 'player_list' -%>
+</div>
+
+<br/>
+<br/>
+<%= link_to_remote 'Reset votes', :url => "votes/reset" %>
